@@ -1,154 +1,85 @@
-// AFTER REPASO
-
-//let seleccionUsuario = prompt('Seleccione un monitor de los siguientes: Samsung, LG, Aorus').toLocaleLowerCase()
-
-/*let seleccionUsuario
-
-while (seleccionUsuario != 'samsung' && seleccionUsuario != 'samsung tv' && seleccionUsuario != 'lg' && seleccionUsuario != 'aorus') {
-    seleccionUsuario = prompt('Valor incorrecto. Seleccione entre: Samsung, LG, Aorus').toLocaleLowerCase()
-    switch (seleccionUsuario) {
-        case 'samsung':
-        case 'samsung tv':
-            console.log('Usted compro un monitor Samsung');
-            break;
-        case 'lg':
-            console.log('Usted compro un monitor LG');
-            break;
-        case 'aorus':
-            console.log('Usted compro un monitor Aorus');
-            break;
-        default:
-            console.log('Usted ingreso un valor incorrecto');
-            break;
-    }
-}
-*/
-
-//REPASO DE FUNCIONES
-
-/*console.log('Curso')
-console.log('Javascript')
-console.log('Coderhouse')
-console.log('Curso')
-console.log('Javascript')
-console.log('Coderhouse')
-console.log('Curso')
-console.log('Javascript')
-console.log('Coderhouse')
-console.log('Curso')
-console.log('Javascript')
-console.log('Coderhouse')
-console.log('Curso')
-console.log('Javascript')
-console.log('Coderhouse')
-console.log('Curso')
-console.log('Javascript')
-console.log('Coderhouse')
-*/
-//Funciones Viejas
-//function funcionFunction(){
-
-//}
-//Funciones Actuales
-//const muestroDatosDelCurso = () => {
-//    console.log('Curso')
-//    console.log('Javascript')
-//    console.log('Coderhouse')
-//}
-
-//muestroDatosDelCurso()
-
-//Funciones con Parametros
-
-//const saludarUsuario = (nombreUsuario, edadUsuario) => {
-//    console.log('Hola ' + nombreUsuario + ', usted tiene ' + edadUsuario + ' años')
-//}
-
-//let nombreUsuarioPrompt = (prompt('Ingrese su nombre'))
-//let edadUsuarioPrompt = (prompt('Ingrese su edad'))
-
-//saludarUsuario(nombreUsuarioPrompt, edadUsuarioPrompt)
-
-//Funciones con Retorno
-
-/*const sumar = (numeroA, numeroB) => {
-    let resultado = numeroA + numeroB
-    return resultado
-}
-
-let numeroAUsuario = Number(prompt('Ingrese el primer numero'))
-let numeroBUsuario = Number(prompt('Ingrese el segundo numero'))
-
-let resultadoSuma = sumar(numeroAUsuario, numeroBUsuario)
-console.log(resultadoSuma)
-*/
-//alert('Hola ' + nombreUsuario +' '+ edadUsuario)
-
+let nombreUsuarioPrompt = prompt('Ingrese su nombre')
+let edadUsuarioPrompt = prompt('Ingrese su edad')
 
 const saludoUsuario = (nombreUsuario, edadUsuario) => {
     alert('Hola ' + nombreUsuario)
     if (edadUsuario >= 18){
-    alert('Bienvenido a La Birrería')
+        alert('Bienvenido a La Birrería')
+        location.href = ''
     } else{
     alert('Sos menor de edad, no podes comprar')
     location.href = 'http://www.menoresniunagota.cl/'
     }     
 }
-
-let nombreUsuarioPrompt = prompt('Ingrese su nombre')
-let edadUsuarioPrompt = prompt('Ingrese su edad')
-
 saludoUsuario(nombreUsuarioPrompt,edadUsuarioPrompt)
+
 
 let seleccion
 let marca
 let cantidad
 let precio
-let total = ('El total de su compra es: $' + precio)
+let subTotal
+let total = ('El total de su compra es: $' + subTotal)
 
 
-while (seleccion != 'schneider $900' && seleccion != 'brahma $700' && seleccion != 'quilmes $600'){
-    seleccion = prompt('Seleccione su marca de cerveza').toLowerCase()
-    switch (seleccion) {
-        case "schneider":
-            alert('Seleccionaste Schneider');
-            cantidad = prompt('Cuantos packs querés comprar?')
-            precio = (900 * cantidad)
-            break;
-        case "brahma":
-            alert('Seleccionaste Brahma');
-            cantidad = prompt('Cuantos packs querés comprar?')
-            precio = (700 * cantidad)
-            break;
-        case "quilmes":
-            alert('Seleccionaste Quilmes');
-            cantidad = prompt('Cuantos packs querés comprar?')
-            precio = (600 * cantidad)
-            break;
-        default:
-            alert('Ingresaste una opción invalida');
-            break;
-    } 
-    alert('El total es: $' + precio)
-}
-
-
-/*
-while (seleccion != 'schneider' && seleccion != 'brahma' && seleccion != 'quilmes'){
-    seleccion = prompt('Esa marca no la trabajamos, Seleccione otra').toLowerCase
-    switch (seleccion) {
-        case "schneider":
-            alert('Seleccionaste Schneider');
-            break;
-        case "brahma":
-            alert('Seleccionaste Brahma');
-            break;
-        case "quilmes":
-            alert('Seleccionaste Quilmes');
-            break;
-        default:
-            alert('Ingresaste una opción invalida');
-            break;
+const cervezas = [
+    {
+        marca: 'Schneider',
+        precio: 1000,
+    },
+    {
+        marca: 'Brahma',
+        precio: 900,
+    },
+    {
+        marca: 'Quilmes',
+        precio: 800,
+    },
+    {
+        marca: 'Budweiser',
+        precio: 1100,
     }
+]
+
+
+alert('Tenemos las siguientes marcas de cerveza')
+
+for (const cerveza of cervezas){
+    alert('Cerveza marca ' + cerveza.marca + ' el precio es: $ ' + cerveza.precio);
 }
-*/
+
+while (seleccion != 'schneider' && seleccion != 'brahma' && seleccion != 'quilmes' && seleccion != 'budweiser'){
+     seleccion = prompt('Seleccione su marca de cerveza: Schneider, Brahma, Quilmes y Budweiser').toLowerCase()
+     switch (seleccion) {
+        case "schneider":
+             alert('Seleccionaste ' + cervezas[0].marca + ' el precio es: $ ' + cervezas[0].precio)
+             cantidad = prompt('Cuantos packs querés comprar?')
+             subTotal = cervezas[0].precio * cantidad
+             alert('El total de su compra es: $' + subTotal)
+             alert(nombreUsuarioPrompt + ' Muchas gracias por tu compra!')
+             break;
+        case "brahma":
+             alert('Seleccionaste ' + cervezas[1].marca + ' el precio es: $ ' + cervezas[1].precio)
+             cantidad = prompt('Cuantos packs querés comprar?')
+             subTotal = cervezas[1].precio * cantidad
+             alert('El total de su compra es: $' + subTotal)
+             alert(nombreUsuarioPrompt + ' Muchas gracias por tu compra!')
+             break;
+        case "quilmes":
+             alert('Seleccionaste ' + cervezas[2].marca + ' el precio es: $ ' + cervezas[2].precio)
+             cantidad = prompt('Cuantos packs querés comprar?')
+             subTotal = cervezas[2].precio * cantidad
+             alert('El total de su compra es: $' + subTotal)
+             alert(nombreUsuarioPrompt + ' Muchas gracias por tu compra!')
+        case "budweiser":
+             alert('Seleccionaste ' + cervezas[3].marca + ' el precio es: $ ' + cervezas[3].precio)
+             cantidad = prompt('Cuantos packs querés comprar?')
+             subTotal = cervezas[3].precio * cantidad
+             alert('El total de su compra es: $' + subTotal)
+             alert(nombreUsuarioPrompt + ' Muchas gracias por tu compra!')
+             break;
+             default:
+                 alert('Gracias por visitarnos')
+                 stop
+    }    
+}
