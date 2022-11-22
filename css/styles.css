@@ -37,9 +37,11 @@ h1{
     font-family: 'Cinzel', serif;
 }
 
-img {
+div img {
     display: flex;
     margin: 0 auto;
+    width: 30rem;
+    height: 30rem;
 }
 
 h2{
@@ -50,12 +52,28 @@ h2{
     font-family: 'Cinzel', serif;
 }
 
+h3{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Cinzel', serif;
+}
+
+div p{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Cinzel', serif;
+}
+
 body { 
     background-image: url(https://res.cloudinary.com/dyetlrz2w/image/upload/v1667306693/Birreria/vecteezy_black-brick-wall-texture-dark-stone-surface-background-for-design_3858165_mz6vsx.jpg;);
     background-size: contain;
 }
 
-.grid-container {
+grid-container {
     display: flex;
     flex-direction: row;
     gap: 3rem;
@@ -63,21 +81,25 @@ body {
     height: 3rem;
     align-content: center;
 }
-  
-  .Producto1 { grid-area: Producto1; }
-  
-  .Producto2 { grid-area: Producto2; }
-  
-  .Producto3 { grid-area: Producto3; }
-  
-  .Producto4 { grid-area: Producto4; }
-  
+
   .grid-container div img{
     width: 10rem;
     height: 10rem;
   }
 
-  .grid-container div button{
-    size: 3rem;
-    align-content: center;
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    position: relative;
+    font-size: 16px;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
